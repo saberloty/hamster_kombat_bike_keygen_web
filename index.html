@@ -1,492 +1,62 @@
-
-
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-    <script src="./telegram-web-app.js"></script>
-
-    <script>
-
-    document.addEventListener('DOMContentLoaded', function () {
-
-        // اطمینان از بارگذاری کتابخانه تلگرام
-
-        if (typeof Telegram !== 'undefined') {
-
-            // تغییر رنگ هدر به قرمز
-
-            Telegram.WebApp.setHeaderColor('#1e0027'); 
-
-            Telegram.WebApp.setBackgroundColor('#1e0027'); 
-
-
-
-            
-
-            Telegram.WebApp.BackButton.show();
-
-
-
-            window.DemoApp = {
-
-                backButtonVisible: true, 
-
-
-
-                toggleBackButton: function (el) {
-
-                  
-
-                    if (this.backButtonVisible) {
-
-                        el.classList.remove('clicked');
-
-                        Telegram.WebApp.BackButton.hide();
-
-                      
-
-                    } else {
-
-                        el.classList.add('clicked');
-
-                        Telegram.WebApp.BackButton.show();
-
-                     
-
-                    }
-
-                    this.backButtonVisible = !this.backButtonVisible;
-
-                }
-
-            };
-
-
-
-            Telegram.WebApp.BackButton.onClick(function() {
-
-             
-
-                Telegram.WebApp.close();
-
-            });
-
-        } else {
-
-          
-
-        }
-
-    });
-
-    
-
-    
-
-    
-
-    
-
-      
-
-
-
-        function showMainContent() {
-
-
-
-            document.getElementById('loading').style.display = 'none';
-
-            
-
-        }
-
-
-
-
-
-        setTimeout(showMainContent, 2000);
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    </script>
-
-    <style>
-
-         #loading {
-
-            position: fixed;
-
-            top: 50%;
-
-            left: 50%;
-
-            transform: translate(-50%, -50%);
-
-            background-color: #fff;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            z-index: 1000; /* بالاتر از بقیه عناصر */
-
-            width: 100%;
-
-            height: 100%;
-
-            background-color: #1e0027;
-
-            border-radius: 8px;
-
-            text-align: center;
-
-        }
-
-                .loader {
-
-            border: 16px solid #f3f3f3; /* Light grey */
-
-            border-top: 16px solid #2c003e; /* Blue */
-
-            border-radius: 50%;
-
-            width: 120px;
-
-            height: 120px;
-
-            animation: spin 2s linear infinite;
-
-        }
-
-
-
-        @keyframes spin {
-
-            0% { transform: rotate(0deg); }
-
-            100% { transform: rotate(360deg); }
-
-        }
-
-        .dokmeye{
-
-                background-color: #6a0080;
-
-    color: white;
-
-    border: none;
-
-    padding: 10px 20px;
-
-    font-size: 1rem;
-
-    border-radius: 5px;
-
-    cursor: pointer;
-
-    font-weight: 700;
-
-        }
-
-        .dokmeye:hover{
-
-            background-color: #a334ba;
-
-        }
-
-        a{
-
-            text-decoration:none;
-
-        }
-
-    </style>
-
-    
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Game Promo Code Generator</title>
-
-        <script>
-
-        // تولید یک نسخه رندوم
-
-        var randomVersion = Math.random().toString(36).substring(7);
-
-        // ایجاد لینک به استایل
-
-        var linkElement = '<link rel="stylesheet" href="styles.css?v=' + randomVersion + '">';
-
-        // اضافه کردن لینک به head
-
-        document.write(linkElement);
-
-    </script>
-
+    <title>Генератор Ключей Hamster Kombat</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-
-    <div class="container">
-
-        
-
-        <div id="loading" style="">
-
-        <div class="loader"></div>
-
-    </div>
-
-        
-
-        
-
-        
-
-        
-
-        
-
-                <div id="error" style="">
-
-        <p style="font-size:1.5rem;color: #e0b3ff;">برای استفاده از این ابزار ابتدا لازمه عضو کانال ما بشی</p>
-
-        <br>
-
-        <div class="yaro">
-
-            <p>
-
-    <a class="dokmeye" href="https://t.me/ljcod">Join Channel 1</a>
-
     
-
-  </p><br>
-
-     <p>
-
-    <a class="dokmeye" href="https://t.me/H373_Team">Join Channel 2</a>
-
-    
-
-  </p><br>
-
-	 <button class="button" onclick="refreshPage()">تایید عضویت</button>
-
-	 <script>
-
-function refreshPage() {
-
-    location.reload();
-
-}
-
-
-
-</script>
-
-	</div></div>  <!--error not join channel-->
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        <div id="main" style="display:none">
-
-        <h1>Game Promo Code Generator</h1>
-
-        <div class="form-group">
-
-            <label for="gameSelect">Select Game</label>
-
+     
+            <h1>Генератор Ключей Hamster Kombat</h1>
+            <label for="gameSelect" id="gameSelectLabel">Выберите игру для генерации ключа:</label>
             <select id="gameSelect">
-
-                <option value="1">Riding Extreme 3D</option>
-
-                <option value="2">Chain Cube 2048</option>
-
-                <option value="3">My Clone Army</option>
-
-                <option value="4">Train Miner</option>
-
-                <option value="5">MergeAway</option>
-
-                <option value="6">Twerk Race</option>
-
-                <option value="7">Polysphere</option>
-
-
-
+                <option value="MyCloneArmy">My Clone Army</option>
+                <option value="ChainCube2048">Chain Cube 2048</option>
+                <option value="TrainMiner">Train Miner</option>
+                <option value="BikeRide3D">Bike Ride 3D</option>
+                <option value="MergeAway">Merge Away</option>
+                <option value="TwerkRace">Twerk Race</option>
+                <option value="Polysphere">Polysphere</option>
             </select>
-
-        </div>
-
-        
-
-        <div class="form-group">
-
-            <label id="keyCountLabel" for="keyCountSelect">Number of keys:</label>
-
+            <label for="keyCountSelect" id="keyCountLabel">Выберите количество ключей для генерации:</label>
             <select id="keyCountSelect">
-
                 <option value="1">1</option>
-
                 <option value="2">2</option>
-
                 <option value="3">3</option>
-
                 <option value="4">4</option>
-
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
                 <option value="8">8</option>
-
-                
-
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
             </select>
-
-        </div>
-
-        <button id="startBtn">Generate Keys</button>
-
-        <div id="progressContainer" class="hidden">
-
-            <div class="progress-bar">
-
-                <div id="progressBar"></div>
-
+            <button id="startBtn" class="button">Сгенерировать ключи</button>
+            <div id="progressContainer" class="progress-container hidden">
+                <div id="progressBar" class="progress-bar"></div>
+                <span id="progressText" class="progress-text">0%</span>
             </div>
-
-            <div id="progressText">0%</div>
-
-            <div id="progressLog">Starting...</div>
-
-            <div id="countdownContainer">
-
-            <p style="color:red;font-weight:800">Next Step will start in: <span id="countdownTimer"></span> seconds </p>
-
+            <div id="keyContainer" class="key-container hidden">
+                <h2 id="generatedKeysTitle">Сгенерированные ключи:</h2>
+                <button id="copyAllBtn" class="button hidden">Скопировать все ключи</button>
+                <div id="keysList" class="keys-list"></div>
             </div>
-
+        </section>
+        
+​  <button id="کانال ما در تلگرام" onclick="window.location.href='https://t.me/hamster_key20bot"></button> 
+<p>طراحی شده توسط صابر</p><br>
         </div>
-
-        <div id="keyContainer" class="hidden">
-
-            <h3 id="generatedKeysTitle" class="hidden">Generated Keys:</h3>
-
-            <div id="keysList"></div>
-
-            <button id="copyAllBtn" class="hidden">Copy All Keys</button>
-
-            <div id="copyStatus" class="hidden">Copied!</div>
-
-            <button id="generateMoreBtn">Generate More Keys</button>
-
-        </div>
-
-        <div style="display:none" class="mycodes">
-
-            
-
-            <button id="ShowKeysBtn">My Codes</button>
-
-            <div id="generatedCodesContainer" style="display:none;">
-
-                <h3>Today's Generated Codes:</h3>
-
-                <ul id="generatedCodesList"></ul>
-
-            </div>
-
-
-
-        </div>
-
-        <div class="footer">
-
-            
-
-            <button id="creatorChannelBtn">@H373_Team</button> 
-
-            
-
-        </div>
-
-        </div> <!--main-->
-
-       
-
     </div>
 
-    
-
-
-
-    <script src="script.js?v=13">
-
-    </script>
-
-    <script>
-
-         function zadrosh() {
-
-            var element = document.getElementById("generateMoreBtn");
-
-            if (element) {
-
-                element.style.display = "";
-
-            }
-
-        }
-
-    </script>
-
+    <script src="script.js"></script>
 </body>
+                </html>
 
+    </main>
+</body>
 </html>
-
-
-
-<script>
-
-      document.getElementById("main").style.display = "";
-
- document.getElementById("error").style.display = "none";
-
-                    
-
-    </script>
